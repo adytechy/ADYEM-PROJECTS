@@ -1,0 +1,108 @@
+#Python code that uses the Beautiful Soup library to scrape the title and all the links on a website:
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Get the title of the website
+title = soup.find('title').text
+print(title)
+
+# Get all the links on the website
+links = soup.find_all('a')
+for link in links:
+    print(link.get('href'))
+    
+# Here is an example of Python code that uses the Beautiful Soup library to scrape the content of a webpage:
+
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Get all the text content of the webpage
+content = soup.get_text()
+print(content)
+
+
+#2
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com'
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Get all the p elements in the webpage
+paragraphs = soup.find_all('p')
+for p in paragraphs:
+    print(p.text)
+    
+#mechanical soup
+
+import mechanicalsoup
+
+# Open a connection to the website
+browser = mechanicalsoup.StatefulBrowser()
+browser.open("https://www.example.com/database")
+
+# Fill in the login form and submit it
+browser.select_form('form[action="login"]')
+browser["username"] = "your_username"
+browser["password"] = "your_password"
+browser.submit_selected()
+
+# Navigate to the page with the database
+browser.follow_link("database")
+
+# Get the content of the webpage
+page = browser.get_current_page()
+
+# Use Beautiful Soup to parse the HTML and extract the data
+soup = BeautifulSoup(str(page), "html.parser")
+
+# Extract the data from the table
+table = soup.find("table")
+rows = table.find_all("tr")
+for row in rows:
+    cells = row.find_all("td")
+    for cell in cells:
+        print(cell.text)
+        
+
+# selenium web scraping
+
+
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+# Set up the webdriver
+driver = webdriver.Chrome()
+
+# Go to the Twitter account
+driver.get("https://twitter.com/yourusername")
+
+# Get the HTML of the page
+html = driver.page_source
+
+# Use Beautiful Soup to parse the HTML
+soup = BeautifulSoup(html, "html.parser")
+
+# Find all the tweets on the page
+tweets = soup.find_all("div", class_="tweet")
+
+# Print the text of each tweet
+for tweet in tweets:
+    text = tweet.find("p", class_="tweet-text").text
+    print(text)
+
+# Close the webdriver
+driver.close()
