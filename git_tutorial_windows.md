@@ -1,4 +1,4 @@
-# Simple Git & GitHub Tutorial for Windows by Ady Techy
+# Simple Git & GitHub Tutorial for Windows
 
 ## ⚙️ 1. Install Git on Windows
 - Download Git from: [https://git-scm.com/downloads](https://git-scm.com/downloads)
@@ -33,11 +33,30 @@ cat ~/.ssh/id_ed25519.pub
 
 ## 🐙 3. Connect GitHub Repo
 
-### 📌 Clone a Repo
+### 📌 Option 1: Clone a Repo (if already created on GitHub)
 ```bash
 git clone git@github.com:yourusername/your-repo.git
 cd your-repo
 ```
+
+### 📌 Option 2: Start a New Local Repo
+```bash
+mkdir my-project
+cd my-project
+git init
+```
+- This creates a new Git repository in your folder.
+
+### 📌 Push the New Local Repo to GitHub
+1. Go to GitHub and create a **new repository** (without README or .gitignore).
+2. Then connect and push your local project:
+```bash
+git remote add origin git@github.com:yourusername/your-repo.git
+git branch -M main
+git push -u origin main
+```
+- `git remote add origin` links your local repo to GitHub.
+- `git push -u origin main` pushes and tracks the main branch.
 
 ---
 
@@ -140,3 +159,4 @@ git status
 ### OPTIONAL: Set VS Code as Git Editor (nice touch)
 ```bash
 git config --global core.editor "code --wait"
+```
