@@ -1,4 +1,4 @@
-# Simple Git & GitHub Tutorial for Windows
+# 🧠 Simple Git & GitHub Tutorial for Windows
 
 ## ⚙️ 1. Install Git on Windows
 - Download Git from: [https://git-scm.com/downloads](https://git-scm.com/downloads)
@@ -39,124 +39,146 @@ git clone git@github.com:yourusername/your-repo.git
 cd your-repo
 ```
 
-### 📌 Option 2: Start a New Local Repo
+### 📌 Option 2: Start a new Git project and connect
+
+To start tracking your project with Git:
+
 ```bash
-mkdir my-project
-cd my-project
 git init
 ```
-- This creates a new Git repository in your folder.
-
-### 📌 Push the New Local Repo to GitHub
-1. Go to GitHub and create a **new repository** (without README or .gitignore).
-2. Then connect and push your local project:
-```bash
-git remote add origin git@github.com:yourusername/your-repo.git
-git branch -M main
-git push -u origin main
-```
-- `git remote add origin` links your local repo to GitHub.
-- `git push -u origin main` pushes and tracks the main branch.
 
 ---
 
-## 🌿 4. Create and Switch Branches
+## 📂 4. Check Status and Track Files
 
-### 📌 Check current branch
+```bash
+git status       # Show changed/untracked files
+git add .        # Add all files to staging area
+git add file.txt # Add a specific file
+```
+
+---
+
+## 💾 5. Commit Changes
+
+```bash
+git commit -m "Your commit message here"
+```
+
+---
+
+## 🔄 6. Change Default Branch to `main`
+
+Git used to create a `master` branch by default. To switch it to `main`:
+
+```bash
+git branch -m master main
+```
+
+To check the branch:
+
 ```bash
 git branch
 ```
 
-### 📌 Create a new branch and switch to it
+---
+
+## 🌐 7. Add Remote and Push to GitHub
+
+1. **Create a new repo on GitHub** (but **don’t** initialize it with README/license).
+2. **Link your local repo to GitHub**:
+
 ```bash
-git checkout -b feature-branch
+git remote add origin https://github.com/your-username/your-repo-name.git
+```
+
+If you mistakenly added the wrong remote:
+
+```bash
+git remote remove origin
+```
+
+3. **Push your code**:
+
+```bash
+git push -u origin main
 ```
 
 ---
 
-## ✍️ 5. Make Changes and Commit
+## 🌳 8. Branching
 
-### 📌 Make a file or edit something
-Example:
 ```bash
-echo "Hello World" > hello.txt
+git branch new-feature     # Create new branch
+git checkout new-feature   # Switch to it
 ```
 
-### 📌 Stage and commit
+Or use:
+
 ```bash
-git add .
-git commit -m "Add hello.txt file"
-```
-
----
-
-## 🚀 6. Push Changes to GitHub
-
-### 📌 Push to current branch
-```bash
-git push origin feature-branch
+git switch -c new-feature
 ```
 
 ---
 
-## 📀 7. Switch Between Branches
+## 🚀 9. Merge a Branch into Main
 
-```bash
-git checkout main        # switch to main
-git checkout feature-xyz # switch to another
-```
-
----
-
-## ♻️ 8. Undo or Revert Changes
-
-### 🔄 Discard local file changes (before staging)
-```bash
-git checkout -- filename.txt
-```
-
-### 🔄 Unstage a file (after `git add` but before commit)
-```bash
-git reset HEAD filename.txt
-```
-
-### 🔄 Undo the last commit (but keep the changes)
-```bash
-git reset --soft HEAD~1
-```
-
-### 🔄 Undo the last commit and remove changes
-```bash
-git reset --hard HEAD~1
-```
-
-> ⚠️ Be careful with `--hard`, it deletes changes.
-
-### 🔄 See commit history
-```bash
-git log --oneline
-```
-
-### 🔄 Go back to a specific version
-```bash
-git checkout <commit-id>
-```
-
-To return to the latest version (main branch):
 ```bash
 git checkout main
+git merge new-feature
 ```
 
 ---
 
-## ✅ Final Tip: See Git Status Anytime
+## 🔁 10. Undo & Revert
+
+### Discard changes in a file:
+
 ```bash
-git status
+git restore file.txt
+```
+
+### Discard all changes:
+
+```bash
+git restore .
+```
+
+### Unstage a file (remove from staging area):
+
+```bash
+git restore --staged file.txt
+```
+
+### Revert a commit:
+
+```bash
+git revert <commit-id>
+```
+
+### Reset to a previous commit (⚠️ destructive):
+
+```bash
+git reset --hard <commit-id>
 ```
 
 ---
 
-### OPTIONAL: Set VS Code as Git Editor (nice touch)
+## 🔍 11. View History
+
 ```bash
-git config --global core.editor "code --wait"
+git log                  # Full history
+git log --oneline --graph  # Summary graph
 ```
+
+---
+
+## 🙌 12. You're Ready!
+
+Now you know how to:
+- ✅ Use Git for version control
+- ✅ Work with branches
+- ✅ Push to GitHub
+- ✅ Undo mistakes safely
+
+Happy coding! 🚀
