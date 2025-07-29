@@ -95,6 +95,7 @@ git remote add origin https://github.com/your-username/your-repo-name.git
 If you mistakenly added the wrong remote:
 
 ```bash
+git remote -v
 git remote remove origin
 ```
 
