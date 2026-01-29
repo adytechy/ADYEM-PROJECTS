@@ -254,12 +254,12 @@ Division (Top Level)
 | | TanStack Query | Server State Management |
 | | React Hook Form | Form Handling |
 | | Zod | Schema Validation |
-| **Backend** | Supabase / Lovable Cloud | Backend-as-a-Service |
+| **Backend** | Supabase | Backend-as-a-Service |
 | | PostgreSQL | Database |
 | | Deno (Edge Functions) | Serverless Functions |
 | | GoTrue | Authentication |
 | | Row-Level Security | Data Access Control |
-| **Infrastructure** | Lovable Cloud | Hosting & Deployment |
+| **Infrastructure** | Self-hosted or Cloud Provider | Hosting & Deployment |
 
 ### Self-Hosting Stack (Recommended)
 
@@ -289,13 +289,6 @@ For private server deployment:
 ---
 
 ## Deployment Guide
-
-### Option 1: Lovable Cloud (Recommended for Quick Start)
-
-1. **Publish** the application from Lovable editor
-2. **Configure** custom domain in project settings
-3. **Set** subfolder path if needed (e.g., `/hisba-demo`)
-4. **Enable** SSL (automatic with Lovable)
 
 ### Option 2: Self-Hosted Private Server
 
