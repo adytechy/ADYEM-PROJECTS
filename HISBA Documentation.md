@@ -11,8 +11,7 @@
 4. [User Roles & Access Control](#user-roles--access-control)
 5. [Core Features](#core-features)
 6. [Technology Stack](#technology-stack)
-7. [Deployment Guide](#deployment-guide)
-8. [Security Considerations](#security-considerations)
+
 
 ---
 
@@ -254,7 +253,7 @@ Division (Top Level)
 | | TanStack Query | Server State Management |
 | | React Hook Form | Form Handling |
 | | Zod | Schema Validation |
-| **Backend** | Supabase | Backend-as-a-Service |
+| **Backend** 
 | | PostgreSQL | Database |
 | | Deno (Edge Functions) | Serverless Functions |
 | | GoTrue | Authentication |
@@ -300,4 +299,5 @@ For private server deployment:
 
 *Document Last Updated: January 2026*
 *Kano State Hisbah Board - Digital Case & Record Management System*
+
 
